@@ -46,7 +46,7 @@ def checkout(cart, coupons)
     p "key: #{key}"
     p "value: #{value}"
     p hash
-    # memo += hash[][:price]
+    # memo += hash[key][:price]
     memo
   end
   
