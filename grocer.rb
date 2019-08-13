@@ -48,7 +48,7 @@ def checkout(cart, coupons)
   clearance_applied = apply_clearance(coupons_applied)
   
   total = clearance_applied.reduce(0) do |memo, (key, value)|
-    memo += value[:price]
+    memo += (value[:price] * value[:count])
     memo
   end
   
