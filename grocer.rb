@@ -15,7 +15,7 @@ def apply_coupons(cart, coupons)
   
   coupons.reduce(cart) do |memo, hash|
     item_name = hash[:item]
-    if cart[item_name] && cart[]
+    if cart[item_name] && cart[item_name][:count]
       memo[item_name][:count] -= hash[:num]
       coupon_name = item_name + " W/COUPON"
       if memo[coupon_name]
