@@ -30,6 +30,7 @@ def generate_cart
 	end
 end
 
+
 def generate_coupons
 	[].tap do |c|
 		rand(2).times do
