@@ -41,8 +41,10 @@ def checkout(cart, coupons)
   coupons_applied = apply_coupons(updated_cart, coupons)
   clearance_applied = apply_clearance(updated_cart)
   
-  total = clearance_applied.reduce(0) do |memo, hash|
+  total = clearance_applied.reduce(0) do |memo, (key, value)|
     p "$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    p "key: #{key}"
+    p "value: #{value}"
     p hash
     # memo += hash[][:price]
     memo
