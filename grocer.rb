@@ -14,7 +14,7 @@ end
 def apply_coupons(cart, coupons)
   
   coupons.reduce(cart) do |memo, hash|
-    if cart.keys.include?(hash.values.first)
+    if cart.keys.include?(hash[:items])
       memo[hash.values.first][:count] -= hash[:num]
       memo[hash.values.first + " W/ COUPON"] = {
         :price => (hash[:cost] / hash[:num]),
