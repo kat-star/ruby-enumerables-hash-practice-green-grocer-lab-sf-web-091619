@@ -16,10 +16,10 @@ def apply_coupons(cart, coupons)
   coupons.reduce(cart) do |memo, hash|
     item_name = hash[:item]
     if cart[item_name]
-      memo[hash.values.first][:count] -= hash[:num]
-      memo[hash.values.first + " W/ COUPON"] = {
+      memo[item_name][:count] -= hash[:num]
+      memo[item_name + " W/ COUPON"] = {
         :price => (hash[:cost] / hash[:num]),
-        :clearance => cart[hash.values.first][:clearance],
+        :clearance => cart[item_name][:clearance],
         :count => hash[:num]
       }
     end
